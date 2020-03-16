@@ -1,4 +1,4 @@
-package my.portfolio.mySpringboot;
+package my.portfolio.mySpringboot.web;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import static org.springframework.boot.SpringApplication.run;
