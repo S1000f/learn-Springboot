@@ -1,4 +1,4 @@
-package my.portfolio.mySpringboot.web.domain.posts;
+package my.portfolio.mySpringboot.domain.posts;
 
 import org.junit.After;
 import org.junit.Test;
@@ -24,7 +24,7 @@ public class PostsRepositoryTest {
     }
 
     @Test
-    public void posts_retrun() {
+    public void posts_return() {
         //given
         String title = "test_title";
         String content = "test_content";

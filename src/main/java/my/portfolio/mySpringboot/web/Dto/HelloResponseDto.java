@@ -1,4 +1,4 @@
-package my.portfolio.mySpringboot.web.web.Dto;
+package my.portfolio.mySpringboot.web.Dto;
 
 
 import lombok.Getter;

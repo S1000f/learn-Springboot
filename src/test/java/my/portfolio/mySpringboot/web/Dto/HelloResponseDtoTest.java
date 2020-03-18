@@ -1,6 +1,6 @@
-package my.portfolio.mySpringboot.web.dto;
+package my.portfolio.mySpringboot.web.Dto;
 
-import my.portfolio.mySpringboot.web.web.Dto.HelloResponseDto;
+import my.portfolio.mySpringboot.web.Dto.HelloResponseDto;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

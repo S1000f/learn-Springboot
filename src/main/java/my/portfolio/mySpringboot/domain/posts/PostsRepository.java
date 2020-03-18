@@ -1,4 +1,4 @@
-package my.portfolio.mySpringboot.web.domain.posts;
+package my.portfolio.mySpringboot.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
