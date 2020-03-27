@@ -2,6 +2,8 @@ package my.portfolio.mySpringboot.config.auth;
 
 
 import lombok.RequiredArgsConstructor;
+import my.portfolio.mySpringboot.config.auth.dto.OAuthAttributes;
+import my.portfolio.mySpringboot.config.auth.dto.SessionUser;
 import my.portfolio.mySpringboot.domain.user.User;
 import my.portfolio.mySpringboot.domain.user.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -27,7 +29,8 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         OAuth2UserService delegate = new DefaultOAuth2UserService();
         OAuth2User oAuth2User = delegate.loadUser(userRequest);
 
-        String registrationId = userRequest.getClientRegistration().getRegistrationId();
+        String registrationId = userRequest.getClientRegistration()
+                                            .getRegistrationId();
         String userNameAttributeName = userRequest.getClientRegistration()
                                                   .getProviderDetails()
                                                   .getUserInfoEndpoint()
