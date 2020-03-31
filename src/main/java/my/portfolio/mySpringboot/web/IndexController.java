@@ -1,6 +1,7 @@
 package my.portfolio.mySpringboot.web;
 
 import lombok.RequiredArgsConstructor;
+import my.portfolio.mySpringboot.config.auth.LoginUser;
 import my.portfolio.mySpringboot.config.auth.dto.SessionUser;
 import my.portfolio.mySpringboot.service.posts.PostsService;
 import my.portfolio.mySpringboot.web.Dto.PostsResponseDto;
@@ -16,29 +17,13 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
-
-    @GetMapping("/posts/save")
-    public String postsSave() {
-        return "posts-save";
-    }
 
     @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
-        if(user != null) {
+    public String index(Model model, @LoginUser SessionUser user) {
+        if (user != null) {
             model.addAttribute("userName", user.getName());
         }
 
         return "index";
-    }
-
-    @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model) {
-        PostsResponseDto dto = postsService.findById(id);
-        model.addAttribute("post", dto);
-
-        return "posts-update";
     }
 }
