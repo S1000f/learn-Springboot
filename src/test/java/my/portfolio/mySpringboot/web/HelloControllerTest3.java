@@ -1,5 +1,6 @@
 package my.portfolio.mySpringboot.web;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class HelloControllerTest3 {
     @Autowired
     private MockMvc mvc2;
 
+    @Ignore
     @Test
     public void hello_return2() throws Exception {
         String hello = "hello";
@@ -29,6 +31,7 @@ public class HelloControllerTest3 {
            .andExpect(content().string(hello));
     }
 
+    @Ignore
     @Test
     public void helloDto_return2() throws Exception {
         String name = "hello";
