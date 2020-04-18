@@ -27,7 +27,7 @@ before_deploy:
   - cp build/libs/*.jar before-deploy/
   - cd before-deploy && zip -r before-deplpy *
   - cd ../ && mkdir -p deploy
-  - mv before-deploy/before-deploy.zip deploy/learn-Springboot
+  - mv before-deploy/before-deploy.zip deploy/learn-Springboot.zip
 
 deploy:
   - provider: s3
