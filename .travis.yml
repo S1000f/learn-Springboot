@@ -21,9 +21,12 @@ notifications:
       - dohp.kim@gmail.com
 
 before_deploy:
-  - zip -r learn-Springboot *
-  - mkdir -p deploy
-  - mv learn-Springboot.zip deploy/learn-Springboot.zip
+  - mkdir -p before-deploy
+  - cp scripts/*.sh before-deploy/
+  - cp appspec.yml before-deploy/
+  - cd before-deploy && zip -r before-deplpy *
+  - cd ../ && mkdir -p deploy
+  - mv before-deploy/before-deploy.zip deploy/learn-Springboot
 
 deploy:
   - provider: s3
