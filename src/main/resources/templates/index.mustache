@@ -31,8 +31,8 @@
                 <th>최종수정일</th>
             </tr>
             </thead>
-            <tbody id="today">
-            {{#posts}} <!-- posts라는 List를 순회함. 자바의 for-in 과 비슷 -->
+            <tbody id="tbody">
+            {{#posts}}
                 <tr>
                     <td>{{id}}</td>
                     <td><a href="/posts/update/{{id}}">{{title}}</a></td>

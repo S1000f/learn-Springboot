@@ -2,10 +2,13 @@ package my.portfolio.mySpringboot.web;
 
 import lombok.RequiredArgsConstructor;
 import my.portfolio.mySpringboot.service.posts.PostsService;
+import my.portfolio.mySpringboot.web.Dto.PostsListResponseDto;
 import my.portfolio.mySpringboot.web.Dto.PostsResponseDto;
 import my.portfolio.mySpringboot.web.Dto.PostsSaveRequestDto;
 import my.portfolio.mySpringboot.web.Dto.PostsUpdateRequestDto;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -33,5 +36,10 @@ public class PostsApiController {
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDto findById (@PathVariable Long id) {
         return postsService.findById(id);
+    }
+
+    @GetMapping("/api/v1/posts/list")
+    public List<PostsListResponseDto> findAll() {
+        return postsService.findAllDesc();
     }
 }
